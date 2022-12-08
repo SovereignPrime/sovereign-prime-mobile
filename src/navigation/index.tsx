@@ -1,22 +1,18 @@
-import { createStackNavigator } from '@react-navigation/stack';
-import { Text } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+// * hooks
+import { useAuth } from '@theme/Auth';
 // * components
 import AuthNavigation from './auth';
-import HomeNavigation from './home';
+import AppNavigation from './app';
 
 const Route = () => {
-  const RootStack = createStackNavigator();
+  const { authData, loading } = useAuth();
 
   return (
-    <RootStack.Navigator>
-      <RootStack.Screen name="Auth" component={AuthNavigation} />
-      <RootStack.Screen name="Home" component={Home} />
-    </RootStack.Navigator>
+    <NavigationContainer>
+      {authData?.token ? <AppNavigation /> : <AuthNavigation />}
+    </NavigationContainer>
   );
 };
 
 export default Route;
-
-const Home = () => {
-  return <Text>Home</Text>;
-};

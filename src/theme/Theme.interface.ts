@@ -1,10 +1,12 @@
-import {ViewStyle} from 'react-native';
+import { ViewStyle } from 'react-native';
 
 export interface Theme {
   id: string;
   align: AlignTheme;
   color: ColorTheme;
   font: FontTheme;
+  spacing: SpacingTheme;
+  box: BoxTheme;
 }
 
 export interface ColorTheme {
@@ -16,6 +18,14 @@ export interface FontTheme {
 }
 
 export interface AlignTheme {
+  [key: string]: ViewStyle;
+}
+
+export interface SpacingTheme {
+  [key: string]: ViewStyle;
+}
+
+export interface BoxTheme {
   [key: string]: ViewStyle;
 }
 
