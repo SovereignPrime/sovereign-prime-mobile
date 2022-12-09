@@ -15,5 +15,6 @@ export const DEFAULT_THEME_CONSTANTS: {
   color: {
     black: '#000',
     white: '#fff',
+    honeysuckle: '#efff8e',
   },
 };

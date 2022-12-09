@@ -30,4 +30,10 @@ export const DEFAULT_ALIGN_THEME: AlignTheme = {
     flexDirection: 'row',
     alignItems: 'center',
   },
+  flexRowBetween: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
 };

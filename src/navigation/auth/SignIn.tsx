@@ -32,7 +32,12 @@ const SignIn = (props: SigninProps) => {
     console.log(data);
   }, []);
   const goSignUp = useCallback(() => {
-    props.navigation.navigate('Signup');
+    props.navigation.navigate('Signup', {
+      screen: 'Basic',
+      params: {
+        parentNavigation: props.navigation,
+      },
+    });
   }, [props]);
 
   const styles = useThemeAwareObject(createStyles);

@@ -13,8 +13,16 @@ export const DEFAULT_FONT_THEME: FontTheme = {
     fontSize: 18,
     fontWeight: '400',
   },
+  normal: {
+    fontSize: 14,
+    fontWeight: '400',
+  },
   caption: {
     fontSize: 12,
     fontWeight: '700',
+  },
+  captionLight: {
+    fontSize: 12,
+    fontWeight: '400',
   },
 };
