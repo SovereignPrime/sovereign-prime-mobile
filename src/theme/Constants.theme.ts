@@ -16,5 +16,6 @@ export const DEFAULT_THEME_CONSTANTS: {
     black: '#000',
     white: '#fff',
     honeysuckle: '#efff8e',
+    butterfly: '#309CFF',
   },
 };

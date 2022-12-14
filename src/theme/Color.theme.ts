@@ -6,4 +6,5 @@ export const DEFAULT_COLOR_THEME: ColorTheme = {
   secondary: DEFAULT_THEME_CONSTANTS.color.white as string,
   backgroundPrimary: '#D2D2D2',
   btn01: DEFAULT_THEME_CONSTANTS.color.honeysuckle as string,
+  link: DEFAULT_THEME_CONSTANTS.color.butterfly as string,
 };

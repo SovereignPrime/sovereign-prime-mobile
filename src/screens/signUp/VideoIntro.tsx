@@ -18,7 +18,12 @@ import { VideoIntroSignupProps } from '@models/navigation';
 
 const VideoIntro = (props: VideoIntroSignupProps) => {
   const onBack = useCallback(() => {
-    props.navigation.navigate('VideoIntro', {
+    props.navigation.navigate('Basic', {
+      parentNavigation: props.route.params.parentNavigation,
+    });
+  }, [props]);
+  const onUpload = useCallback(() => {
+    props.navigation.navigate('UploadMethod', {
       parentNavigation: props.route.params.parentNavigation,
     });
   }, [props]);
@@ -37,7 +42,7 @@ const VideoIntro = (props: VideoIntroSignupProps) => {
         <View style={styles.selfieContainer}>
           <Image source={DefaultAvatar} style={styles.selfieImage} />
           <TouchableOpacity
-            onPress={() => {}}
+            onPress={onUpload}
             activeOpacity={0.9}
             style={styles.addSelfieBtn}>
             <SelfieAddIcon width={40} height={40} />

@@ -9,6 +9,10 @@ export const DEFAULT_FONT_THEME: FontTheme = {
     fontSize: 18,
     fontWeight: '700',
   },
+  label1: {
+    fontSize: 24,
+    fontWeight: '600',
+  },
   desc: {
     fontSize: 18,
     fontWeight: '400',

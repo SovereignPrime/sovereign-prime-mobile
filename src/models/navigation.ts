@@ -31,6 +31,12 @@ type SignupStackParamList = {
   VideoIntro: {
     parentNavigation: any;
   };
+  UploadMethod: {
+    parentNavigation: any;
+  };
+  VideoRecord: {
+    parentNavigation: any;
+  };
 };
 
 type BasicSignupProps = NativeStackScreenProps<
