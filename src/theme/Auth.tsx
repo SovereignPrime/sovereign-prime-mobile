@@ -11,7 +11,9 @@ const AuthProvider: React.FC<{ children: ReactNode }> = ({
   const [authData, setAuthData] = useState<AuthData>();
   const [loading, setLoading] = useState(true);
 
-  const signIn = async () => {};
+  const signIn = async (data: AuthData) => {
+    setAuthData(data);
+  };
 
   const signOut = async () => {
     setAuthData(undefined);

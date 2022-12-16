@@ -9,6 +9,17 @@ type AuthStackParamList = {
   Signup: NavigatorScreenParams<SignupStackParamList>;
 };
 
+/**
+ * App Navigation
+ */
+type AppStackParamList = {
+  Home: undefined;
+  Market: undefined;
+  Wallet: undefined;
+  Users: undefined;
+  Profile: undefined;
+};
+
 type SigninProps = NativeStackScreenProps<
   AuthStackParamList,
   'Signin',
@@ -60,4 +71,6 @@ export type {
   SignupStackParamList,
   BasicSignupProps,
   VideoIntroSignupProps,
+  // * app navigation
+  AppStackParamList,
 };

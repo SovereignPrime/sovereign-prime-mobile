@@ -1,7 +1,7 @@
 export interface AuthContextData {
   authData?: AuthData;
   loading: boolean;
-  signIn(): Promise<void>;
+  signIn(_: AuthData): Promise<void>;
   signOut(): void;
 }
 

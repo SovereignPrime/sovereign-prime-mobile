@@ -6,7 +6,10 @@ import AuthNavigation from './auth';
 import AppNavigation from './app';
 
 const Route = () => {
-  const { authData, loading } = useAuth();
+  const {
+    authData,
+    // loading
+  } = useAuth();
 
   return (
     <NavigationContainer>
