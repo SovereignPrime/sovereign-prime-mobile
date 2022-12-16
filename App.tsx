@@ -10,11 +10,11 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { NavigationContainer } from '@react-navigation/native';
-
+// * hooks
 import store from '@store/index';
 import { ThemeProvider } from '@theme/Theme.context';
-
+import { AuthProvider } from '@theme/Auth';
+// * components
 import Route from '@navigation/index';
 
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
@@ -27,11 +27,11 @@ const App = () => {
     <Provider store={store}>
       <SafeAreaProvider>
         <ThemeProvider>
-          <NavigationContainer>
-            <QueryClientProvider client={queryClient}>
+          <QueryClientProvider client={queryClient}>
+            <AuthProvider>
               <Route />
-            </QueryClientProvider>
-          </NavigationContainer>
+            </AuthProvider>
+          </QueryClientProvider>
         </ThemeProvider>
       </SafeAreaProvider>
     </Provider>
