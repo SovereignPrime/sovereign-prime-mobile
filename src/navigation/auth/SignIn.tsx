@@ -29,7 +29,7 @@ const SignIn = (props: SigninProps) => {
   });
 
   const onSubmit = useCallback((data: any) => {
-    console.log(data);
+    console.log('submitting---', data);
   }, []);
   const goSignUp = useCallback(() => {
     props.navigation.navigate('Signup', {

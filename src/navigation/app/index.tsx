@@ -1,13 +1,15 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Text } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+// * types
+import { AppStackParamList } from '@models/navigation';
 
-const HomeStack = createBottomTabNavigator();
+const AppStack = createBottomTabNavigator<AppStackParamList>();
 
 const HomeNavigation = () => {
   return (
-    <HomeStack.Navigator>
-      <HomeStack.Screen name="Home" component={Home} />
-    </HomeStack.Navigator>
+    <AppStack.Navigator>
+      <AppStack.Screen name="Home" component={Home} />
+    </AppStack.Navigator>
   );
 };
 
