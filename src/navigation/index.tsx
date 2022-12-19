@@ -13,7 +13,10 @@ const Route = () => {
 
   return (
     <NavigationContainer>
-      {authData?.token ? <AppNavigation /> : <AuthNavigation />}
+      {
+        // authData?.token
+        true ? <AppNavigation /> : <AuthNavigation />
+      }
     </NavigationContainer>
   );
 };

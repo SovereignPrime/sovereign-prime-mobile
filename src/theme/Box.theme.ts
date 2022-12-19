@@ -17,4 +17,30 @@ export const DEFAULT_BOX_THEME: BoxTheme = {
     borderRadius: DEFAULT_THEME_CONSTANTS.borderRadius.normal as number,
     borderWidth: 0.5,
   },
+  /**
+   * card boxes
+   */
+  card: {
+    borderWidth: 0.5,
+    borderColor: DEFAULT_THEME_CONSTANTS.color.iron as string,
+    shadowColor: DEFAULT_THEME_CONSTANTS.color.black as string,
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.2,
+    backgroundColor: DEFAULT_THEME_CONSTANTS.color.white as string,
+  },
+  /**
+   * icon
+   */
+  unreadIcon: {
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+    backgroundColor: DEFAULT_THEME_CONSTANTS.color.rubyred as string,
+  },
+  avatar: {
+    width: 28,
+    height: 28,
+    borderRadius: 14,
+    overflow: 'hidden',
+  },
 };
