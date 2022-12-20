@@ -17,6 +17,11 @@ export const DEFAULT_BOX_THEME: BoxTheme = {
     borderRadius: DEFAULT_THEME_CONSTANTS.borderRadius.normal as number,
     borderWidth: 0.5,
   },
+  buttonSmall: {
+    paddingVertical: 7,
+    borderWidth: 2,
+    borderColor: DEFAULT_THEME_CONSTANTS.color.mercury as string,
+  },
   /**
    * card boxes
    */

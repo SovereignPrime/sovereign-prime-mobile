@@ -9,6 +9,7 @@ import MarketItem02 from '@image/mockup/marketItem02.png';
 import MarketItem03 from '@image/mockup/marketItem03.png';
 import MarketItem04 from '@image/mockup/marketItem04.png';
 import MarketItem1 from '@image/mockup/marketItem001.png';
+import MarketItemUpdate1 from '@image/mockup/marketItem0001.png';
 
 const mockupNotificationList = [
   {
@@ -112,9 +113,19 @@ const mockupMarketItemListForProfile = [
   },
 ];
 
+const mockupUserMarketUpdates = [
+  {
+    id: 1,
+    name: 'Colorful Sweater',
+    price: 20,
+    image: MarketItemUpdate1,
+  },
+];
+
 export {
   mockupNotificationList,
   mockupVerificationUsersList,
   mockupMarketItemList,
   mockupMarketItemListForProfile,
+  mockupUserMarketUpdates,
 };
