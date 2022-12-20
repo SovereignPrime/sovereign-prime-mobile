@@ -8,6 +8,8 @@ import {
   View,
 } from 'react-native';
 import { useForm } from 'react-hook-form';
+// * hooks
+import { useAuth } from '@theme/Auth';
 // * custom components
 import { LabelInputWithControl } from '@components/atoms/inputs/inputs';
 // * styles
@@ -28,9 +30,17 @@ const SignIn = (props: SigninProps) => {
     },
   });
 
-  const onSubmit = useCallback((data: any) => {
-    console.log('submitting---', data);
-  }, []);
+  const { signIn } = useAuth();
+
+  const onSubmit = useCallback(
+    (data: any) => {
+      signIn({
+        ...data,
+        token: 'test',
+      });
+    },
+    [signIn],
+  );
   const goSignUp = useCallback(() => {
     props.navigation.navigate('Signup', {
       screen: 'Basic',

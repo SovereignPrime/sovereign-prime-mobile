@@ -17,5 +17,12 @@ export const DEFAULT_THEME_CONSTANTS: {
     white: '#fff',
     honeysuckle: '#efff8e',
     butterfly: '#309CFF',
+    silversand: '#c1c1c1',
+    iron: '#d7d7d7',
+    greycloud: '#B6B6B6',
+    mercury: '#E5E5E5',
+    milkwhite: '#FBFCFD',
+    greenwhite: '#EBECEC',
+    rubyred: '#FF1717',
   },
 };
