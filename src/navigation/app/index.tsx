@@ -1,5 +1,6 @@
 import { SafeAreaView, StatusBar } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { MenuProvider } from 'react-native-popup-menu';
 // * components
 import HomeScreen from '@screens/home';
 import MarketScreen from '@screens/market';
@@ -23,7 +24,7 @@ const HomeNavigation = () => {
   const { theme } = useTheme();
 
   return (
-    <>
+    <MenuProvider>
       <StatusBar backgroundColor={'#000'} barStyle="dark-content" />
       <SafeAreaView />
       <AppStack.Navigator
@@ -95,7 +96,7 @@ const HomeNavigation = () => {
           }}
         />
       </AppStack.Navigator>
-    </>
+    </MenuProvider>
   );
 };
 

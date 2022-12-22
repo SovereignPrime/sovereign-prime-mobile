@@ -1,9 +1,14 @@
+import { useCallback, useState } from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { useFocusEffect } from '@react-navigation/native';
 // * styles
 import { useThemeAwareObject } from '@theme/ThemeAwareObject.hook';
 import { Theme } from '@theme/Theme.interface';
+// * components
+import { MarketDetailItem } from '@components/atoms/marketplace/Item';
+import ProfileMenu from '@components/atoms/popups/ProfileMenu';
+import ContactList from 'src/containers/contact/List';
 // * assets
-import MoreIcon from '@svg/more.svg';
 import BackIcon from '@svg/back.svg';
 import GenderIcon from '@svg/gender.svg';
 import LocationIcon from '@svg/location.svg';
@@ -12,15 +17,27 @@ import ConnectionIcon from '@svg/connection.svg';
 // * mockup
 import Avatar04 from '@image/mockup/avatar04.png';
 import { mockupUserMarketUpdates } from '@utils/mockup';
-import { MarketDetailItem } from '@components/atoms/marketplace/Item';
 
+/**
+ *
+ *
+ */
 const UsersScreen = () => {
+  const [screenIndex, setScreenIndex] = useState<number>(0);
+  useFocusEffect(
+    useCallback(() => {
+      setScreenIndex(0);
+    }, []),
+  );
+
   const styles = useThemeAwareObject(createStyles);
-  return (
+  return screenIndex === 1 ? (
+    <ContactList />
+  ) : (
     <View style={styles.container}>
       <View style={styles.headerBar}>
         <BackIcon width={20} height={30} style={styles.backIcon} />
-        <MoreIcon />
+        <ProfileMenu />
       </View>
       <View style={styles.userInfoContainer}>
         <Image source={Avatar04} style={styles.avatarImage} />
@@ -51,7 +68,12 @@ const UsersScreen = () => {
               Web Developer
             </Text>
           </View>
-          <View style={[styles.detailInfo, styles.detailInfoMargin]}>
+          <TouchableOpacity
+            onPress={() => {
+              setScreenIndex(1);
+            }}
+            activeOpacity={0.8}
+            style={[styles.detailInfo, styles.detailInfoMargin]}>
             <ConnectionIcon
               width={20}
               height={20}
@@ -60,7 +82,7 @@ const UsersScreen = () => {
             <Text numberOfLines={1} style={styles.detailInfoText}>
               25
             </Text>
-          </View>
+          </TouchableOpacity>
         </View>
         <View style={styles.btnRow}>
           <TouchableOpacity

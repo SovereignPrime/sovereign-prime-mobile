@@ -11,6 +11,8 @@ import { Controller } from 'react-hook-form';
 // * styles
 import { useThemeAwareObject } from '@theme/ThemeAwareObject.hook';
 import createStyles from './styles';
+// * assets
+import SearchIcon from '@svg/search.svg';
 
 const InputWithLabel = ({ label }: { label: string }) => {
   const styles = useThemeAwareObject(createStyles);
@@ -125,4 +127,35 @@ const LabelInputControlWithAddon = ({
   );
 };
 
-export { LabelInputWithControl, LabelInputControlWithAddon, InputWithLabel };
+const SearchInput = ({
+  search,
+  setSearch,
+  placeholder,
+  additionalStyle,
+}: {
+  search: string | undefined;
+  setSearch: (newSearch: string | undefined) => void;
+  placeholder: string;
+  additionalStyle: ViewStyle;
+}) => {
+  // const currentRef = useRef<any>();
+  const styles = useThemeAwareObject(createStyles);
+  return (
+    <View style={[styles.searchInputContainer, additionalStyle]}>
+      <TextInput
+        // ref={currentRef}
+        onChangeText={setSearch}
+        placeholder={placeholder}
+        style={styles.searchInput}
+      />
+      <SearchIcon width={25} height={25} style={{}} />
+    </View>
+  );
+};
+
+export {
+  LabelInputWithControl,
+  LabelInputControlWithAddon,
+  InputWithLabel,
+  SearchInput,
+};

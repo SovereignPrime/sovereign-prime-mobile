@@ -25,6 +25,20 @@ const createStyles = (theme: Theme) => {
     addon: {
       marginLeft: 15,
     },
+    searchInputContainer: {
+      ...theme.align.flexRowCenter,
+      paddingVertical: 12,
+      paddingLeft: 14,
+      paddingRight: 20,
+      width: '100%',
+      borderWidth: 2,
+      borderColor: theme.color.borderPrimary,
+      backgroundColor: theme.color.secondary,
+    },
+    searchInput: {
+      ...theme.font.normal,
+      flex: 1,
+    },
   });
 };
 

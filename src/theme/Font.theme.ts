@@ -29,6 +29,10 @@ export const DEFAULT_FONT_THEME: FontTheme = {
     fontSize: 14,
     fontWeight: '700',
   },
+  normalMedium: {
+    fontSize: 14,
+    fontWeight: '500',
+  },
   caption: {
     fontSize: 12,
     fontWeight: '700',
@@ -48,5 +52,9 @@ export const DEFAULT_FONT_THEME: FontTheme = {
   caption2: {
     fontSize: 8,
     fontWeight: '500',
+  },
+  caption3: {
+    fontSize: 11,
+    fontWeight: '400',
   },
 };

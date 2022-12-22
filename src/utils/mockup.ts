@@ -122,10 +122,46 @@ const mockupUserMarketUpdates = [
   },
 ];
 
+const mockupContactList = [
+  {
+    id: 1,
+    image: Avatar01,
+    name: 'Brooke Weaver',
+    latestMessage: 'Hi, how are you doing?',
+    latestDate: 'Today, 8:20 pm',
+    unread: true,
+  },
+  {
+    id: 2,
+    image: Avatar02,
+    name: 'Han Noguchi',
+    latestMessage: 'Talk to yo later!',
+    latestDate: 'Today, 8:10 pm',
+    unread: false,
+  },
+  {
+    id: 3,
+    image: Avatar03,
+    name: 'Jessie Lake',
+    latestMessage: 'See ya :)',
+    latestDate: 'Today, 7:40 pm',
+    unread: false,
+  },
+  {
+    id: 3,
+    image: Avatar04,
+    name: 'Group Chat',
+    latestMessage: 'Haha',
+    latestDate: 'Today, 5:15 pm',
+    unread: true,
+  },
+];
+
 export {
   mockupNotificationList,
   mockupVerificationUsersList,
   mockupMarketItemList,
   mockupMarketItemListForProfile,
   mockupUserMarketUpdates,
+  mockupContactList,
 };

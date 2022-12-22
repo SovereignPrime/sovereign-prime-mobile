@@ -21,7 +21,11 @@ const MarketDetailItem = ({
       </View>
       <View style={styles.detailItemInfo}>
         <Text style={styles.detailItemInfoText}>{name}</Text>
-        <Text style={styles.detailItemInfoText}>{`$${price}.00`}</Text>
+        <Text
+          style={[
+            styles.detailItemInfoText,
+            styles.detailItemInfoTextMargin,
+          ]}>{`$${price}.00`}</Text>
       </View>
     </View>
   );
@@ -62,6 +66,9 @@ const createStyles = (theme: Theme) => {
     detailItemInfoText: {
       ...theme.align.captioMedium,
       color: theme.color.secondary,
+    },
+    detailItemInfoTextMargin: {
+      marginTop: 9,
     },
   });
 };

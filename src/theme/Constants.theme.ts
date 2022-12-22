@@ -24,5 +24,6 @@ export const DEFAULT_THEME_CONSTANTS: {
     milkwhite: '#FBFCFD',
     greenwhite: '#EBECEC',
     rubyred: '#FF1717',
+    reddishorange: '#F05600',
   },
 };

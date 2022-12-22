@@ -13,4 +13,5 @@ export const DEFAULT_COLOR_THEME: ColorTheme = {
   borderPrimary: DEFAULT_THEME_CONSTANTS.color.mercury as string,
   btn01: DEFAULT_THEME_CONSTANTS.color.honeysuckle as string,
   link: DEFAULT_THEME_CONSTANTS.color.butterfly as string,
+  unread: DEFAULT_THEME_CONSTANTS.color.reddishorange as string,
 };

@@ -15,6 +15,12 @@ export const DEFAULT_ALIGN_THEME: AlignTheme = {
     flexDirection: 'column',
     alignItems: 'center',
   },
+  flexColBetween: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
   flexCenter: {
     display: 'flex',
     flexDirection: 'column',
@@ -34,6 +40,12 @@ export const DEFAULT_ALIGN_THEME: AlignTheme = {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  flexRowEnd: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
     alignItems: 'center',
   },
 };
