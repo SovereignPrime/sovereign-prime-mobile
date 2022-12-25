@@ -122,6 +122,137 @@ const mockupUserMarketUpdates = [
   },
 ];
 
+const mockupMarketList = [
+  [
+    {
+      id: 1,
+      name: 'Apple Watch',
+      price: 450,
+      likes: 14,
+      dislikes: 0,
+      image: MarketItem1,
+      user: {
+        id: 1,
+        avatar: Avatar01,
+        name: 'Eric Smith',
+      },
+    },
+    {
+      id: 2,
+      name: 'Apple Watch',
+      price: 450,
+      likes: 14,
+      dislikes: 0,
+      image: MarketItem1,
+      user: {
+        id: 1,
+        avatar: Avatar01,
+        name: 'Eric Smith',
+      },
+    },
+  ],
+  [
+    {
+      id: 3,
+      name: 'Apple Watch',
+      price: 450,
+      likes: 14,
+      dislikes: 0,
+      image: MarketItem1,
+      user: {
+        id: 1,
+        avatar: Avatar01,
+        name: 'Eric Smith',
+      },
+    },
+    {
+      id: 4,
+      name: 'Apple Watch',
+      price: 450,
+      likes: 14,
+      dislikes: 0,
+      image: MarketItem1,
+      user: {
+        id: 1,
+        avatar: Avatar01,
+        name: 'Eric Smith',
+      },
+    },
+  ],
+  [
+    {
+      id: 5,
+      name: 'Apple Watch',
+      price: 450,
+      likes: 14,
+      dislikes: 0,
+      image: MarketItem1,
+      user: {
+        id: 6,
+        avatar: Avatar01,
+        name: 'Eric Smith',
+      },
+    },
+    {
+      id: 6,
+      name: 'Apple Watch',
+      price: 450,
+      likes: 14,
+      dislikes: 0,
+      image: MarketItem1,
+      user: {
+        id: 1,
+        avatar: Avatar01,
+        name: 'Eric Smith',
+      },
+    },
+  ],
+  [
+    {
+      id: 8,
+      name: 'Apple Watch',
+      price: 450,
+      likes: 14,
+      dislikes: 0,
+      image: MarketItem1,
+      user: {
+        id: 6,
+        avatar: Avatar01,
+        name: 'Eric Smith',
+      },
+    },
+    {
+      id: 9,
+      name: 'Apple Watch',
+      price: 450,
+      likes: 14,
+      dislikes: 0,
+      image: MarketItem1,
+      user: {
+        id: 1,
+        avatar: Avatar01,
+        name: 'Eric Smith',
+      },
+    },
+  ],
+  [
+    {
+      id: 7,
+      name: 'Apple Watch',
+      price: 450,
+      likes: 14,
+      dislikes: 0,
+      image: MarketItem1,
+      user: {
+        id: 1,
+        avatar: Avatar01,
+        name: 'Eric Smith',
+      },
+    },
+    undefined,
+  ],
+];
+
 const mockupContactList = [
   {
     id: 1,
@@ -164,4 +295,5 @@ export {
   mockupMarketItemListForProfile,
   mockupUserMarketUpdates,
   mockupContactList,
+  mockupMarketList,
 };

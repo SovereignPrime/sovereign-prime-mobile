@@ -27,6 +27,12 @@ export const DEFAULT_ALIGN_THEME: AlignTheme = {
     justifyContent: 'center',
     alignItems: 'center',
   },
+  flexXCenter: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   flexRow: {
     display: 'flex',
     flexDirection: 'row',

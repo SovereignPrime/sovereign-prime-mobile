@@ -1,13 +1,12 @@
+import { StyleSheet, Text } from 'react-native';
 import {
   Menu,
   MenuOptions,
   MenuOption,
   MenuTrigger,
 } from 'react-native-popup-menu';
-import { StyleSheet, Text, View } from 'react-native';
 // * assets
 import MoreIcon from '@svg/more.svg';
-
 // * styles
 import { Theme } from '@theme/Theme.interface';
 import { useThemeAwareObject } from '@theme/ThemeAwareObject.hook';
