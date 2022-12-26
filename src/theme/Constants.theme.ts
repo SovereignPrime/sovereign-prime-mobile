@@ -25,5 +25,8 @@ export const DEFAULT_THEME_CONSTANTS: {
     greenwhite: '#EBECEC',
     rubyred: '#FF1717',
     reddishorange: '#F05600',
+    mirage: '#17202A',
+    silverchalice: '#ABABAB',
+    whitesmoke: '#F6F5F5',
   },
 };

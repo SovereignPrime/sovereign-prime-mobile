@@ -5,6 +5,10 @@ export const DEFAULT_FONT_THEME: FontTheme = {
     fontSize: 25,
     fontWeight: '700',
   },
+  big: {
+    fontSize: 32,
+    fontWeight: '600',
+  },
   label: {
     fontSize: 18,
     fontWeight: '700',
@@ -17,9 +21,21 @@ export const DEFAULT_FONT_THEME: FontTheme = {
     fontSize: 24,
     fontWeight: '600',
   },
+  label2: {
+    fontSize: 15,
+    fontWeight: '600',
+  },
+  label2Light: {
+    fontSize: 15,
+    fontWeight: '400',
+  },
   desc: {
     fontSize: 18,
     fontWeight: '400',
+  },
+  desc2: {
+    fontSize: 16,
+    fontWeight: '600',
   },
   normal: {
     fontSize: 14,
@@ -32,6 +48,14 @@ export const DEFAULT_FONT_THEME: FontTheme = {
   normalMedium: {
     fontSize: 14,
     fontWeight: '500',
+  },
+  normal1Medium: {
+    fontSize: 13,
+    fontWeight: '500',
+  },
+  normal1Light: {
+    fontSize: 13,
+    fontWeight: '400',
   },
   caption: {
     fontSize: 12,
@@ -49,12 +73,24 @@ export const DEFAULT_FONT_THEME: FontTheme = {
     fontSize: 10,
     fontWeight: '500',
   },
+  caption1Light: {
+    fontSize: 10,
+    fontWeight: '400',
+  },
   caption2: {
     fontSize: 8,
     fontWeight: '500',
   },
+  caption2Light: {
+    fontSize: 8,
+    fontWeight: '400',
+  },
   caption3: {
     fontSize: 11,
     fontWeight: '400',
+  },
+  caption3Medium: {
+    fontSize: 11,
+    fontWeight: '500',
   },
 };

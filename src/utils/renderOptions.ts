@@ -8,6 +8,11 @@ import FamilyIcon from '@svg/family.svg';
 import StuffIcon from '@svg/free_stuff.svg';
 import GardenIcon from '@svg/garden.svg';
 
+import CardIcon from '@svg/card.svg';
+import FulfilledIcon from '@svg/check.svg';
+import TransactionIcon from '@svg/transaction.svg';
+import NotificationIcon from '@svg/notification.svg';
+
 const notificationTabList = [
   {
     label: 'All',
@@ -75,4 +80,49 @@ const marketCategoriesList = [
   },
 ];
 
-export { notificationTabList, marketCategoriesList };
+const walletSubmenuList = [
+  {
+    label: 'Payment',
+    description: 'Request payment and make payment',
+    icon: CardIcon,
+    value: 'payment',
+  },
+  {
+    label: 'Transaction',
+    description: 'Completed and canceled transaction',
+    icon: TransactionIcon,
+    value: 'transaction',
+  },
+  {
+    label: 'Notification',
+    description: 'Receive notification on all wallet acticities',
+    icon: NotificationIcon,
+    value: 'notification',
+  },
+  {
+    label: 'Fulfilled Payment',
+    description: 'History for all completed payment',
+    icon: FulfilledIcon,
+    value: 'fulfilled',
+  },
+];
+
+const walletPaymentSubmenuList = [
+  {
+    label: 'Request Payment',
+    icon: CardIcon,
+    value: 'request',
+  },
+  {
+    label: 'Make Payment',
+    icon: CardIcon,
+    value: 'make',
+  },
+];
+
+export {
+  notificationTabList,
+  marketCategoriesList,
+  walletSubmenuList,
+  walletPaymentSubmenuList,
+};

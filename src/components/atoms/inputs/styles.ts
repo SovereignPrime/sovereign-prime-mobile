@@ -39,6 +39,28 @@ const createStyles = (theme: Theme) => {
       ...theme.font.normal,
       flex: 1,
     },
+    inputWithIconContainer: {
+      ...theme.align.flexRowCenter,
+      marginTop: 36,
+      paddingVertical: 15,
+      paddingLeft: 33,
+      paddingRight: 25,
+      height: 60,
+      borderRadius: 3,
+      backgroundColor: theme.color.background04,
+    },
+    icon: {
+      color: theme.color.primary,
+    },
+    multilineInput: {
+      paddingVertical: 17,
+      paddingHorizontal: 28,
+      flex: 0,
+      height: 120,
+      borderWidth: 1,
+      borderColor: theme.color.font02,
+      color: theme.color.primary,
+    },
   });
 };
 

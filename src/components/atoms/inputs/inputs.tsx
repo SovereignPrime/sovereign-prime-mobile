@@ -153,9 +153,50 @@ const SearchInput = ({
   );
 };
 
+const InputWithIcon = ({
+  placeholder,
+  RightIcon,
+  additionalStyle,
+}: {
+  placeholder: string;
+  RightIcon: any;
+  additionalStyle: ViewStyle;
+}) => {
+  const styles = useThemeAwareObject(createStyles);
+  return (
+    <View style={[styles.inputWithIconContainer, additionalStyle]}>
+      <TextInput
+        onChangeText={(newValue: string) => {}}
+        placeholder={placeholder}
+        style={styles.searchInput}
+      />
+      <RightIcon width={21} height={21} style={styles.icon} />
+    </View>
+  );
+};
+
+const MultilineInput = ({
+  placeholder,
+  additionalStyle,
+}: {
+  placeholder: string;
+  additionalStyle: ViewStyle;
+}) => {
+  const styles = useThemeAwareObject(createStyles);
+  return (
+    <TextInput
+      multiline={true}
+      placeholder={placeholder}
+      style={[styles.multilineInput, additionalStyle]}
+    />
+  );
+};
+
 export {
   LabelInputWithControl,
   LabelInputControlWithAddon,
   InputWithLabel,
   SearchInput,
+  InputWithIcon,
+  MultilineInput,
 };
