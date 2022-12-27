@@ -13,6 +13,10 @@ export const DEFAULT_FONT_THEME: FontTheme = {
     fontSize: 18,
     fontWeight: '700',
   },
+  labelSemibold: {
+    fontSize: 18,
+    fontWeight: '600',
+  },
   labelMedium: {
     fontSize: 18,
     fontWeight: '500',
@@ -36,6 +40,10 @@ export const DEFAULT_FONT_THEME: FontTheme = {
   desc2: {
     fontSize: 16,
     fontWeight: '600',
+  },
+  desc2Light: {
+    fontSize: 16,
+    fontWeight: '400',
   },
   normal: {
     fontSize: 14,

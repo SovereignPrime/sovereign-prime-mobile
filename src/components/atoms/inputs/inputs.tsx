@@ -154,10 +154,16 @@ const SearchInput = ({
 };
 
 const InputWithIcon = ({
+  value,
+  onChange,
+  onBlur,
   placeholder,
   RightIcon,
   additionalStyle,
 }: {
+  value: string;
+  onChange: (newText: string) => void;
+  onBlur: () => void;
   placeholder: string;
   RightIcon: any;
   additionalStyle: ViewStyle;
@@ -166,7 +172,9 @@ const InputWithIcon = ({
   return (
     <View style={[styles.inputWithIconContainer, additionalStyle]}>
       <TextInput
-        onChangeText={(newValue: string) => {}}
+        value={value}
+        onChangeText={onChange}
+        onBlur={onBlur}
         placeholder={placeholder}
         style={styles.searchInput}
       />

@@ -11,7 +11,8 @@ import { Theme } from '@theme/Theme.interface';
 import { useThemeAwareObject } from '@theme/ThemeAwareObject.hook';
 // * mockup
 import AvatarImage from '@image/mockup/avatar07.png';
-import RequestPaymentScreen from './RequestPayment';
+import RequestMakePaymentScreen from './RequestMakePayment';
+import ConfirmPaymentScreen from './ConfirmPayment';
 
 /**
  * currentStep
@@ -77,8 +78,24 @@ const WalletScreen = () => {
           onRequestPayment={() => setCurrentStep(5)}
           onMakePayment={() => setCurrentStep(6)}
         />
-      ) : currentStep === 5 ? (
-        <RequestPaymentScreen onBack={() => setCurrentStep(0)} />
+      ) : currentStep === 5 || currentStep === 6 ? (
+        <RequestMakePaymentScreen
+          type={currentStep === 5}
+          onMakePayment={({
+            name,
+            amount,
+            note,
+          }: {
+            name: string;
+            amount: number;
+            note: string;
+          }) => {
+            setCurrentStep(7);
+          }}
+          onBack={() => setCurrentStep(1)}
+        />
+      ) : currentStep === 7 ? (
+        <ConfirmPaymentScreen onBack={() => setCurrentStep(6)} />
       ) : null}
     </View>
   );

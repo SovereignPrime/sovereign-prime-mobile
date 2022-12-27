@@ -53,10 +53,11 @@ const createStyles = (theme: Theme) => {
       color: theme.color.primary,
     },
     multilineInput: {
-      paddingVertical: 17,
+      paddingTop: 17,
+      paddingBottom: 17,
       paddingHorizontal: 28,
       flex: 0,
-      height: 120,
+      height: 140,
       borderWidth: 1,
       borderColor: theme.color.font02,
       color: theme.color.primary,

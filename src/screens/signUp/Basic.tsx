@@ -36,7 +36,6 @@ const BasicSignup = (props: BasicSignupProps) => {
 
   const onSubmit = useCallback(
     (data: any) => {
-      console.log(data);
       props.navigation.navigate('VideoIntro', {
         parentNavigation: props.route.params.parentNavigation,
       });
