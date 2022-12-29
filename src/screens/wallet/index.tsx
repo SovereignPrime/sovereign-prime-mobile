@@ -13,6 +13,8 @@ import { useThemeAwareObject } from '@theme/ThemeAwareObject.hook';
 import AvatarImage from '@image/mockup/avatar07.png';
 import RequestMakePaymentScreen from './RequestMakePayment';
 import ConfirmPaymentScreen from './ConfirmPayment';
+import TransactionScreen from './Transaction';
+import HistoryScreen from './History';
 
 /**
  * currentStep
@@ -23,6 +25,10 @@ import ConfirmPaymentScreen from './ConfirmPayment';
  * 4 - fulfilled
  * 5 - request payment
  * 6 - make payment
+ * 7 - confirm payment
+ * 8 - transaction history - completed
+ * 9 - transaction history - canceled
+ *
  */
 const WalletScreen = () => {
   const [currentStep, setCurrentStep] = useState(0);
@@ -96,6 +102,17 @@ const WalletScreen = () => {
         />
       ) : currentStep === 7 ? (
         <ConfirmPaymentScreen onBack={() => setCurrentStep(6)} />
+      ) : currentStep === 2 ? (
+        <TransactionScreen
+          onCompleted={() => setCurrentStep(8)}
+          onCanceled={() => setCurrentStep(9)}
+          onBack={() => setCurrentStep(0)}
+        />
+      ) : currentStep === 8 || currentStep === 9 ? (
+        <HistoryScreen
+          type={currentStep === 8 ? 0 : 1}
+          onBack={() => setCurrentStep(2)}
+        />
       ) : null}
     </View>
   );

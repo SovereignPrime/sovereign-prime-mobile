@@ -6,6 +6,8 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+// * hooks
+import { useAuth } from '@theme/Auth';
 // * styles
 import { Theme } from '@theme/Theme.interface';
 import { useThemeAwareObject } from '@theme/ThemeAwareObject.hook';
@@ -17,6 +19,8 @@ import Avatar01 from '@image/mockup/avatar01.png';
 import { mockupMarketItemListForProfile } from '@utils/mockup';
 
 const ProfileScreen = () => {
+  const { signOut } = useAuth();
+
   const styles = useThemeAwareObject(createStyles);
   return (
     <View style={styles.container}>
@@ -55,7 +59,18 @@ const ProfileScreen = () => {
           Privacy & Settings
         </Text>
         <View style={styles.bottomLine} />
-        <Text style={[styles.label, styles.labelSpace]}>Log Out</Text>
+        <TouchableOpacity
+          onPress={signOut}
+          activeOpacity={0.8}
+          style={[
+            styles.labelSpace,
+            {
+              width: '100%',
+            },
+          ]}>
+          <Text style={[styles.label]}>Log Out</Text>
+        </TouchableOpacity>
+
         <View style={styles.bottomLine} />
       </ScrollView>
     </View>

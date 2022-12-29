@@ -21,6 +21,10 @@ export const DEFAULT_FONT_THEME: FontTheme = {
     fontSize: 18,
     fontWeight: '500',
   },
+  labelLight: {
+    fontSize: 18,
+    fontWeight: '400',
+  },
   label1: {
     fontSize: 24,
     fontWeight: '600',
@@ -32,6 +36,10 @@ export const DEFAULT_FONT_THEME: FontTheme = {
   label2Light: {
     fontSize: 15,
     fontWeight: '400',
+  },
+  label3: {
+    fontSize: 20,
+    fontWeight: '600',
   },
   desc: {
     fontSize: 18,

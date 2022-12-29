@@ -120,9 +120,23 @@ const walletPaymentSubmenuList = [
   },
 ];
 
+const walletTransactionsSubmenuList = [
+  {
+    label: 'Completed Transaction',
+    icon: CardIcon,
+    value: 'completed',
+  },
+  {
+    label: 'Canceled Transaction',
+    icon: CardIcon,
+    value: 'canceled',
+  },
+];
+
 export {
   notificationTabList,
   marketCategoriesList,
   walletSubmenuList,
   walletPaymentSubmenuList,
+  walletTransactionsSubmenuList,
 };

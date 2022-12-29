@@ -288,6 +288,44 @@ const mockupContactList = [
   },
 ];
 
+const mockupCompletedTransactionsList = [
+  {
+    id: 1,
+    type: 0, // ! request: 0, payment: 1,
+    name: 'OYEKALE OLUMIDE',
+    date: '9:00 PM',
+    amount: 50,
+  },
+  {
+    id: 2,
+    type: 0,
+    name: 'OYEKALE OLUMIDE',
+    date: '9:00 PM',
+    amount: 50,
+  },
+  {
+    id: 3,
+    type: 1,
+    name: 'OYEKALE OLUMIDE',
+    date: '9:00 PM',
+    amount: 50,
+  },
+  {
+    id: 4,
+    type: 0,
+    name: 'OYEKALE OLUMIDE',
+    date: '9:00 PM',
+    amount: 50,
+  },
+  {
+    id: 5,
+    type: 1, // ! request: 0, payment: 1,
+    name: 'OYEKALE OLUMIDE',
+    date: '9:00 PM',
+    amount: 50,
+  },
+];
+
 export {
   mockupNotificationList,
   mockupVerificationUsersList,
@@ -296,4 +334,5 @@ export {
   mockupUserMarketUpdates,
   mockupContactList,
   mockupMarketList,
+  mockupCompletedTransactionsList,
 };
