@@ -3,6 +3,10 @@ import { Image, StyleSheet, Text, View } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
 // * components
 import PaymentScreen from './Payment';
+import RequestMakePaymentScreen from './RequestMakePayment';
+import ConfirmPaymentScreen from './ConfirmPayment';
+import TransactionScreen from './Transaction';
+import HistoryScreen from './History';
 import { walletSubmenuList } from '@utils/renderOptions';
 import { WalletSubmenu } from '@components/atoms/wallet/Item';
 import WalletIDBox from '@components/atoms/wallet/IDBox';
@@ -11,10 +15,6 @@ import { Theme } from '@theme/Theme.interface';
 import { useThemeAwareObject } from '@theme/ThemeAwareObject.hook';
 // * mockup
 import AvatarImage from '@image/mockup/avatar07.png';
-import RequestMakePaymentScreen from './RequestMakePayment';
-import ConfirmPaymentScreen from './ConfirmPayment';
-import TransactionScreen from './Transaction';
-import HistoryScreen from './History';
 
 /**
  * currentStep
