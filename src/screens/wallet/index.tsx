@@ -15,6 +15,7 @@ import { Theme } from '@theme/Theme.interface';
 import { useThemeAwareObject } from '@theme/ThemeAwareObject.hook';
 // * mockup
 import AvatarImage from '@image/mockup/avatar07.png';
+import NotificationScreen from './Notification';
 
 /**
  * currentStep
@@ -113,6 +114,8 @@ const WalletScreen = () => {
           type={currentStep === 8 ? 0 : 1}
           onBack={() => setCurrentStep(2)}
         />
+      ) : currentStep === 3 ? (
+        <NotificationScreen onBack={() => setCurrentStep(2)} />
       ) : null}
     </View>
   );
