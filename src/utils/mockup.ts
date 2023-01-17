@@ -326,6 +326,67 @@ const mockupCompletedTransactionsList = [
   },
 ];
 
+const mockupWalletNotifications = [
+  {
+    id: 1,
+    createdAt: '2023-01-09 10:20:50',
+    data: [
+      {
+        id: 23,
+        type: 'request_complete',
+        from: {
+          id: 1,
+          name: 'Georges',
+        },
+        to: {
+          id: 8,
+          name: 'Oyekale olumide',
+        },
+      },
+      {
+        id: 22,
+        type: 'transaction_notify',
+        subtype: 'sent',
+        amount: 50,
+        balance: 450,
+        to: {
+          id: 5,
+          name: 'Lyekale olumide',
+        },
+      },
+    ],
+  },
+  {
+    id: 2,
+    createdAt: '2023-01-09 10:20:50',
+    data: [
+      {
+        id: 23,
+        type: 'request_complete',
+        from: {
+          id: 1,
+          name: 'Georges',
+        },
+        to: {
+          id: 8,
+          name: 'Oyekale olumide',
+        },
+      },
+      {
+        id: 22,
+        type: 'transaction_notify',
+        subtype: 'sent',
+        amount: 50,
+        balance: 450,
+        to: {
+          id: 5,
+          name: 'Lyekale olumide',
+        },
+      },
+    ],
+  },
+];
+
 export {
   mockupNotificationList,
   mockupVerificationUsersList,
@@ -335,4 +396,5 @@ export {
   mockupContactList,
   mockupMarketList,
   mockupCompletedTransactionsList,
+  mockupWalletNotifications,
 };
