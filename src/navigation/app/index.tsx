@@ -7,6 +7,7 @@ import MarketScreen from '@screens/market';
 import WalletScreen from '@screens/wallet';
 import UsersScreen from '@screens/users';
 import ProfileScreen from '@screens/profile';
+import VerificationScreen from '@screens/verification';
 // * types
 import { AppStackParamList } from '@models/navigation';
 // * assets
@@ -93,6 +94,15 @@ const HomeNavigation = () => {
             tabBarIcon: ({ color }) => (
               <ProfileIcon width={29} height={29} style={{ color }} />
             ),
+          }}
+        />
+        <AppStack.Screen
+          name="Verification"
+          component={VerificationScreen}
+          options={{
+            tabBarIconStyle: {
+              display: 'none',
+            },
           }}
         />
       </AppStack.Navigator>

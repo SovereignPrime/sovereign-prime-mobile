@@ -133,10 +133,61 @@ const walletTransactionsSubmenuList = [
   },
 ];
 
+/**
+ * * verification system image list
+ */
+const AvatarPosList = [
+  {
+    x: 0,
+    y: 50,
+    width: 158,
+    height: 158,
+    // * image
+    // image:
+  },
+  {
+    x: 0,
+    y: 50,
+    width: 39,
+    height: 39,
+  },
+  {
+    x: 0,
+    y: 50,
+    width: 51,
+    height: 51,
+  },
+  {
+    x: 0,
+    y: 50,
+    width: 95,
+    height: 95,
+  },
+  {
+    x: 0,
+    y: 50,
+    width: 127,
+    height: 127,
+  },
+  {
+    x: 0,
+    y: 50,
+    width: 39,
+    height: 39,
+  },
+  {
+    x: 0,
+    y: 50,
+    width: 63,
+    height: 63,
+  },
+];
+
 export {
   notificationTabList,
   marketCategoriesList,
   walletSubmenuList,
   walletPaymentSubmenuList,
   walletTransactionsSubmenuList,
+  AvatarPosList,
 };

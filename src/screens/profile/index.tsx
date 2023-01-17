@@ -53,7 +53,17 @@ const ProfileScreen = () => {
         <View style={styles.bottomLine} />
         <Text style={[styles.label, styles.labelSpace]}>Payment</Text>
         <View style={styles.bottomLine} />
-        <Text style={[styles.label, styles.labelSpace]}>Verification</Text>
+        <TouchableOpacity
+          onPress={() => {}}
+          activeOpacity={0.8}
+          style={[
+            styles.labelSpace,
+            {
+              width: '100%',
+            },
+          ]}>
+          <Text style={[styles.label]}>Verification</Text>
+        </TouchableOpacity>
         <View style={styles.bottomLine} />
         <Text style={[styles.label, styles.labelSpace]}>
           Privacy & Settings
@@ -70,7 +80,6 @@ const ProfileScreen = () => {
           ]}>
           <Text style={[styles.label]}>Log Out</Text>
         </TouchableOpacity>
-
         <View style={styles.bottomLine} />
       </ScrollView>
     </View>

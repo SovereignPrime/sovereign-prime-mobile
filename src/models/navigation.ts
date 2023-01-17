@@ -18,6 +18,7 @@ type AppStackParamList = {
   Wallet: undefined;
   Users: undefined;
   Profile: undefined;
+  Verification: undefined;
 };
 
 type SigninProps = NativeStackScreenProps<
@@ -62,6 +63,12 @@ type VideoIntroSignupProps = NativeStackScreenProps<
   'SignupStack'
 >;
 
+type VerificationProps = NativeStackScreenProps<
+  AppStackParamList,
+  'Verification',
+  'AppStack'
+>;
+
 export type {
   // * auth navigation
   AuthStackParamList,
@@ -73,4 +80,5 @@ export type {
   VideoIntroSignupProps,
   // * app navigation
   AppStackParamList,
+  VerificationProps,
 };
