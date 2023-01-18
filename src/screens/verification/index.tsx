@@ -1,16 +1,30 @@
+import { useCallback, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+// * components
+import MatchingAnim from 'src/containers/verification/MatchingAnim';
 // * styles
 import { Theme } from '@theme/Theme.interface';
 import { useThemeAwareObject } from '@theme/ThemeAwareObject.hook';
 
 import { VerificationProps } from '@models/navigation';
+import { useFocusEffect } from '@react-navigation/native';
 
 const VerificationScreen = (props: VerificationProps) => {
+  const [animStart, setAnimStart] = useState(false);
+
+  useFocusEffect(
+    useCallback(() => {
+      setAnimStart(true);
+    }, []),
+  );
+
   const styles = useThemeAwareObject(createStyles);
   return (
     <View style={styles.container}>
       <Text style={styles.labelText}>Start to Connect!</Text>
-      <View style={styles.photosContainer}></View>
+      <View style={styles.photosContainer}>
+        <MatchingAnim isStart={animStart} onFinish={() => {}} />
+      </View>
     </View>
   );
 };
@@ -24,6 +38,7 @@ const createStyles = (theme: Theme) => {
       flex: 1,
       paddingVertical: 57,
       paddingHorizontal: 31,
+      backgroundColor: theme.color.secondary,
     },
     labelText: {
       ...theme.font.label3Bold,
@@ -32,6 +47,7 @@ const createStyles = (theme: Theme) => {
     photosContainer: {
       marginTop: 3,
       flex: 1,
+      width: '100%',
       borderWidth: 3,
       borderColor: theme.color.borderPrimary,
     },
