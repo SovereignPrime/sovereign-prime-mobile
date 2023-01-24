@@ -1,3 +1,4 @@
+import { useCallback } from 'react';
 import {
   Image,
   ScrollView,
@@ -14,12 +15,18 @@ import { useThemeAwareObject } from '@theme/ThemeAwareObject.hook';
 // * assets
 import HamburgerMenuIcon from '@svg/hamburger.svg';
 import EditIcon from '@svg/edit.svg';
+// * typs
+import { ProfileProps } from '@models/navigation';
 // * mockup
 import Avatar01 from '@image/mockup/avatar01.png';
 import { mockupMarketItemListForProfile } from '@utils/mockup';
 
-const ProfileScreen = () => {
+const ProfileScreen = (props: ProfileProps) => {
   const { signOut } = useAuth();
+
+  const onVerification = useCallback(() => {
+    props.navigation.navigate('Verification');
+  }, [props]);
 
   const styles = useThemeAwareObject(createStyles);
   return (
@@ -54,7 +61,7 @@ const ProfileScreen = () => {
         <Text style={[styles.label, styles.labelSpace]}>Payment</Text>
         <View style={styles.bottomLine} />
         <TouchableOpacity
-          onPress={() => {}}
+          onPress={onVerification}
           activeOpacity={0.8}
           style={[
             styles.labelSpace,

@@ -1,5 +1,6 @@
 import { useCallback, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { useFocusEffect } from '@react-navigation/native';
 // * components
 import MatchingAnim from 'src/containers/verification/MatchingAnim';
 // * styles
@@ -7,7 +8,6 @@ import { Theme } from '@theme/Theme.interface';
 import { useThemeAwareObject } from '@theme/ThemeAwareObject.hook';
 
 import { VerificationProps } from '@models/navigation';
-import { useFocusEffect } from '@react-navigation/native';
 
 const VerificationScreen = (props: VerificationProps) => {
   const [animStart, setAnimStart] = useState(false);
@@ -23,7 +23,12 @@ const VerificationScreen = (props: VerificationProps) => {
     <View style={styles.container}>
       <Text style={styles.labelText}>Start to Connect!</Text>
       <View style={styles.photosContainer}>
-        <MatchingAnim isStart={animStart} onFinish={() => {}} />
+        <MatchingAnim
+          isStart={animStart}
+          onFinish={() => {
+            setAnimStart(false);
+          }}
+        />
       </View>
     </View>
   );

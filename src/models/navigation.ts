@@ -69,6 +69,12 @@ type VerificationProps = NativeStackScreenProps<
   'AppStack'
 >;
 
+type ProfileProps = NativeStackScreenProps<
+  AppStackParamList,
+  'Profile',
+  'AppStack'
+>;
+
 export type {
   // * auth navigation
   AuthStackParamList,
@@ -81,4 +87,5 @@ export type {
   // * app navigation
   AppStackParamList,
   VerificationProps,
+  ProfileProps,
 };

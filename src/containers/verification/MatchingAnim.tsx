@@ -6,13 +6,9 @@ import Animated, {
   FadeIn,
   withRepeat,
   useSharedValue,
-  Easing,
   runOnJS,
-  useDerivedValue,
-  useAnimatedProps,
-  withSequence,
 } from 'react-native-reanimated';
-import AnimateableText from 'react-native-animateable-text';
+import { DotIndicator } from 'react-native-indicators';
 // * render options
 import { AvatarPosList } from '@utils/renderOptions';
 // * styles
@@ -247,22 +243,6 @@ const MatchingAnim = ({
       ],
     };
   });
-  const animatedText = useDerivedValue(() => {
-    // return `Matching${textHandlerScale.value}`;
-    return `Matching${
-      textHandlerScale.value > 0.7
-        ? '...'
-        : textHandlerScale.value > 0.4
-        ? '..'
-        : '.'
-    }`;
-  }, []);
-  // ! not working
-  const animatedProps = useAnimatedProps(() => {
-    return {
-      text: animatedText.value,
-    };
-  });
 
   const styles = useThemeAwareObject(createStyles);
   return (
@@ -297,7 +277,16 @@ const MatchingAnim = ({
         </Animated.View>
       ))}
       {animStep === 8 ? (
-        <AnimateableText animatedProps={animatedProps} style={styles.text} />
+        <View style={styles.textContainer}>
+          <Text style={styles.text}>Matching</Text>
+          <DotIndicator
+            style={styles.dotAnim}
+            count={3}
+            size={7}
+            color="#00000070"
+            animationDuration={800}
+          />
+        </View>
       ) : null}
     </View>
   );
@@ -333,12 +322,27 @@ const createStyles = (theme: Theme) => {
     container: {
       flex: 1,
     },
-    text: {
-      ...theme.font.big,
+    textContainer: {
+      ...theme.align.flexXCenter,
       position: 'absolute',
       top: '48%',
+      width: '60%',
       left: '20%',
-      color: theme.color.background03,
+    },
+    text: {
+      ...theme.font.big,
+      color: theme.color.secondary,
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 2,
+      },
+      shadowOpacity: 0.7,
+      shadowRadius: 4,
+      elevation: 5,
+    },
+    dotAnim: {
+      marginTop: 15,
     },
   });
 };

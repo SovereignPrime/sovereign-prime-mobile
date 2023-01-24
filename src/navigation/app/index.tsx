@@ -100,7 +100,10 @@ const HomeNavigation = () => {
           name="Verification"
           component={VerificationScreen}
           options={{
-            // tabBarButton: () => null,
+            tabBarButton: () => null,
+            tabBarStyle: {
+              display: 'none',
+            },
             tabBarIconStyle: {
               display: 'none',
             },
