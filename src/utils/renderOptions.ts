@@ -88,6 +88,21 @@ const marketCategoriesList = [
   },
 ];
 
+const addUsersMenuList = [
+  {
+    label: 'Add Contacts',
+    value: 'contact',
+  },
+  {
+    label: 'New Chat',
+    value: 'chat',
+  },
+  {
+    label: 'Payment',
+    value: 'payment',
+  },
+];
+
 const walletSubmenuList = [
   {
     label: 'Payment',
@@ -204,4 +219,5 @@ export {
   walletPaymentSubmenuList,
   walletTransactionsSubmenuList,
   AvatarPosList,
+  addUsersMenuList,
 };

@@ -20,7 +20,7 @@ import { mockupUserMarketUpdates } from '@utils/mockup';
 
 /**
  *
- *
+ * ! screens list - user profile, contact list, chat list, chat history (group | private peer to peer), add users to Group chat,
  */
 const UsersScreen = () => {
   const [screenIndex, setScreenIndex] = useState<number>(0);
@@ -31,7 +31,7 @@ const UsersScreen = () => {
   );
 
   const styles = useThemeAwareObject(createStyles);
-  return screenIndex === 1 ? (
+  return screenIndex === 0 ? (
     <ContactList />
   ) : (
     <View style={styles.container}>
@@ -70,7 +70,7 @@ const UsersScreen = () => {
           </View>
           <TouchableOpacity
             onPress={() => {
-              setScreenIndex(1);
+              setScreenIndex(0);
             }}
             activeOpacity={0.8}
             style={[styles.detailInfo, styles.detailInfoMargin]}>
