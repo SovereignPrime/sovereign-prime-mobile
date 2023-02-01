@@ -13,6 +13,14 @@ import FulfilledIcon from '@svg/check.svg';
 import TransactionIcon from '@svg/transaction.svg';
 import NotificationIcon from '@svg/notification.svg';
 
+import VerifyAvatar01 from '@image/verification_avatar01.png';
+import VerifyAvatar02 from '@image/verification_avatar02.png';
+import VerifyAvatar03 from '@image/verification_avatar03.png';
+import VerifyAvatar04 from '@image/verification_avatar04.png';
+import VerifyAvatar05 from '@image/verification_avatar05.png';
+import VerifyAvatar06 from '@image/verification_avatar06.png';
+import VerifyAvatar07 from '@image/verification_avatar07.png';
+
 const notificationTabList = [
   {
     label: 'All',
@@ -80,6 +88,21 @@ const marketCategoriesList = [
   },
 ];
 
+const addUsersMenuList = [
+  {
+    label: 'Add Contacts',
+    value: 'contact',
+  },
+  {
+    label: 'New Chat',
+    value: 'chat',
+  },
+  {
+    label: 'Payment',
+    value: 'payment',
+  },
+];
+
 const walletSubmenuList = [
   {
     label: 'Payment',
@@ -133,10 +156,68 @@ const walletTransactionsSubmenuList = [
   },
 ];
 
+/**
+ * * verification system image list
+ */
+const AvatarPosList = [
+  {
+    x: 37,
+    y: 40,
+    width: 158,
+    height: 158,
+    // * image
+    image: VerifyAvatar01,
+  },
+  {
+    x: -26,
+    y: 146,
+    width: 39,
+    height: 39,
+    image: VerifyAvatar02,
+  },
+  {
+    x: 53,
+    y: '52%',
+    width: 51,
+    height: 51,
+    image: VerifyAvatar03,
+  },
+  {
+    x: -47,
+    y: '40%',
+    width: 95,
+    height: 95,
+    image: VerifyAvatar04,
+  },
+  {
+    x: 62,
+    y: '60%',
+    width: 127,
+    height: 127,
+    image: VerifyAvatar05,
+  },
+  {
+    x: 52,
+    y: -26,
+    width: 39,
+    height: 39,
+    image: VerifyAvatar06,
+  },
+  {
+    x: -43,
+    y: -65,
+    width: 63,
+    height: 63,
+    image: VerifyAvatar07,
+  },
+];
+
 export {
   notificationTabList,
   marketCategoriesList,
   walletSubmenuList,
   walletPaymentSubmenuList,
   walletTransactionsSubmenuList,
+  AvatarPosList,
+  addUsersMenuList,
 };

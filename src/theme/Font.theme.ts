@@ -41,6 +41,10 @@ export const DEFAULT_FONT_THEME: FontTheme = {
     fontSize: 20,
     fontWeight: '600',
   },
+  label3Bold: {
+    fontSize: 20,
+    fontWeight: '700'
+  },
   desc: {
     fontSize: 18,
     fontWeight: '400',

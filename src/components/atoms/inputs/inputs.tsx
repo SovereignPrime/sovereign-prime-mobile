@@ -148,7 +148,7 @@ const SearchInput = ({
         placeholder={placeholder}
         style={styles.searchInput}
       />
-      <SearchIcon width={25} height={25} style={{}} />
+      <SearchIcon width={25} height={25} style={styles.icon} />
     </View>
   );
 };

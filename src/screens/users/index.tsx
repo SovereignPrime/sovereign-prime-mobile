@@ -8,6 +8,7 @@ import { Theme } from '@theme/Theme.interface';
 import { MarketDetailItem } from '@components/atoms/marketplace/Item';
 import ProfileMenu from '@components/atoms/popups/ProfileMenu';
 import ContactList from 'src/containers/contact/List';
+import ChatList from 'src/containers/chat/List';
 // * assets
 import BackIcon from '@svg/back.svg';
 import GenderIcon from '@svg/gender.svg';
@@ -20,7 +21,7 @@ import { mockupUserMarketUpdates } from '@utils/mockup';
 
 /**
  *
- *
+ * ! screens list - user profile, contact list, chat list, chat history (group | private peer to peer), add users to Group chat,
  */
 const UsersScreen = () => {
   const [screenIndex, setScreenIndex] = useState<number>(0);
@@ -30,9 +31,19 @@ const UsersScreen = () => {
     }, []),
   );
 
+  // * event handlers
+  const onGoChat = useCallback(() => {
+    setScreenIndex(1);
+  }, []);
+  const onGoContact = useCallback(() => {
+    setScreenIndex(0);
+  }, []);
+
   const styles = useThemeAwareObject(createStyles);
-  return screenIndex === 1 ? (
-    <ContactList />
+  return screenIndex === 0 ? (
+    <ContactList onGoChat={onGoChat} />
+  ) : screenIndex === 1 ? (
+    <ChatList onGoContact={onGoContact} />
   ) : (
     <View style={styles.container}>
       <View style={styles.headerBar}>
@@ -70,7 +81,7 @@ const UsersScreen = () => {
           </View>
           <TouchableOpacity
             onPress={() => {
-              setScreenIndex(1);
+              setScreenIndex(0);
             }}
             activeOpacity={0.8}
             style={[styles.detailInfo, styles.detailInfoMargin]}>

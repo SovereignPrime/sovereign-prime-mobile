@@ -1,77 +1,19 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 // * components
+import ContactList from '@components/pure/contact/List';
 import { SearchInput } from '@components/atoms/inputs/inputs';
 // * styles
 import { Theme } from '@theme/Theme.interface';
-import { useThemeAwareObject } from '@theme/ThemeAwareObject.hook';
 // * assets
 import PlusIcon from '@svg/plus.svg';
 import CheckedIcon from '@svg/checked.svg';
 import { mockupContactList } from '@utils/mockup';
 
-const ContactList = () => {
-  const styles = useThemeAwareObject(createStyles);
-  return (
-    <View style={styles.container}>
-      <View style={styles.headerBar}>
-        <PlusIcon width={18} height={18} style={styles.icon} />
-        <Text style={styles.headerText}>Message</Text>
-      </View>
-      <SearchInput
-        search="best"
-        setSearch={(newSearch: string | undefined) => {
-          console.log('search text changes', newSearch);
-        }}
-        placeholder="Search"
-        additionalStyle={styles.searchbar}
-      />
-      <View style={styles.tabbar}>
-        <TouchableOpacity
-          onPress={() => {}}
-          activeOpacity={0.8}
-          style={[styles.tabItem, styles.activeTabItem]}>
-          <Text>Friends</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => {}}
-          activeOpacity={0.8}
-          style={styles.tabItem}>
-          <Text>Strangers</Text>
-        </TouchableOpacity>
-      </View>
-      <View style={styles.contentList}>
-        {mockupContactList.map((item, index) => (
-          <View
-            style={styles.contactItem}
-            key={`contact-item-${item.id}-${index}`}>
-            <View style={styles.contactItemAvatar}>
-              <Image source={item.image} style={styles.contactItemAvatar} />
-              {item.unread ? <View style={styles.unreadLabel} /> : null}
-            </View>
-            <View style={styles.contactItemContent}>
-              <View style={styles.contactItemRow}>
-                <Text numberOfLines={1} style={styles.contactItemName}>
-                  {item.name}
-                </Text>
-                <Text numberOfLines={1} style={styles.contactItemDate}>
-                  {item.latestDate}
-                </Text>
-              </View>
-              <View style={styles.contactItemRow}>
-                <Text numberOfLines={1} style={styles.contactItemMessage}>
-                  {item.latestMessage}
-                </Text>
-                {item.unread ? null : <CheckedIcon />}
-              </View>
-            </View>
-          </View>
-        ))}
-      </View>
-    </View>
-  );
+const ContactListContainer = ({ onGoChat }: { onGoChat: () => void }) => {
+  return <ContactList onGoChat={onGoChat} />;
 };
 
-export default ContactList;
+export default ContactListContainer;
 
 const createStyles = (theme: Theme) => {
   return StyleSheet.create({
