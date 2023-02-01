@@ -8,6 +8,7 @@ import { Theme } from '@theme/Theme.interface';
 import { MarketDetailItem } from '@components/atoms/marketplace/Item';
 import ProfileMenu from '@components/atoms/popups/ProfileMenu';
 import ContactList from 'src/containers/contact/List';
+import ChatList from 'src/containers/chat/List';
 // * assets
 import BackIcon from '@svg/back.svg';
 import GenderIcon from '@svg/gender.svg';
@@ -30,9 +31,19 @@ const UsersScreen = () => {
     }, []),
   );
 
+  // * event handlers
+  const onGoChat = useCallback(() => {
+    setScreenIndex(1);
+  }, []);
+  const onGoContact = useCallback(() => {
+    setScreenIndex(0);
+  }, []);
+
   const styles = useThemeAwareObject(createStyles);
   return screenIndex === 0 ? (
-    <ContactList />
+    <ContactList onGoChat={onGoChat} />
+  ) : screenIndex === 1 ? (
+    <ChatList onGoContact={onGoContact} />
   ) : (
     <View style={styles.container}>
       <View style={styles.headerBar}>

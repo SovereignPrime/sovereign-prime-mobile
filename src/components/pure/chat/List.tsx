@@ -1,3 +1,4 @@
+import { useCallback } from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 // * components
 import { SearchInput } from '@components/atoms/inputs/inputs';
@@ -6,17 +7,32 @@ import { AddUsersMenu } from '@components/atoms/popups/AddUsersMenu';
 import { Theme } from '@theme/Theme.interface';
 import { useThemeAwareObject } from '@theme/ThemeAwareObject.hook';
 // * assets
-import GoIcon from '@svg/go.svg';
+import CheckedIcon from '@svg/checked.svg';
 import { mockupContactList } from '@utils/mockup';
 
-const ContactList = ({ onGoChat }: { onGoChat: () => void }) => {
+const ChatList = ({
+  activeTab,
+  list,
+  setActiveTab,
+  onGoContact,
+}: {
+  activeTab: number;
+  list: any[];
+  setActiveTab: (newTab: number) => void;
+  onGoContact: () => void;
+}) => {
+  const onTabPress = useCallback(
+    (newTab: number) => () => setActiveTab(newTab),
+    [],
+  );
+
   const styles = useThemeAwareObject(createStyles);
   return (
     <View style={styles.container}>
       <View style={styles.headerBar}>
         <AddUsersMenu additionalStyle={styles.addMenu} />
-        <TouchableOpacity activeOpacity={0.8} onPress={onGoChat} style={{}}>
-          <Text style={styles.headerText}>Message</Text>
+        <TouchableOpacity activeOpacity={0.8} onPress={onGoContact} style={{}}>
+          <Text style={styles.headerText}>Contact</Text>
         </TouchableOpacity>
       </View>
       <SearchInput
@@ -28,24 +44,42 @@ const ContactList = ({ onGoChat }: { onGoChat: () => void }) => {
         additionalStyle={styles.searchbar}
       />
       <View style={styles.tabbar}>
-        <Text style={styles.tabText}>Groups</Text>
-        <TouchableOpacity activeOpacity={0.8} onPress={() => {}} style={{}}>
-          <GoIcon width={16} height={16} style={styles.goIcon} />
-        </TouchableOpacity>
+        {tabsList.map(tabItem => (
+          <TouchableOpacity
+            onPress={onTabPress(tabItem.value)}
+            activeOpacity={0.8}
+            style={[
+              styles.tabItem,
+              activeTab === tabItem.value ? styles.activeTabItem : {},
+            ]}
+            key={`tab-item-${tabItem.value}`}>
+            <Text>{tabItem.label}</Text>
+          </TouchableOpacity>
+        ))}
       </View>
       <View style={styles.contentList}>
-        {mockupContactList.map((item, index) => (
+        {list.map((item, index) => (
           <View
             style={styles.contactItem}
             key={`contact-item-${item.id}-${index}`}>
             <View style={styles.contactItemAvatar}>
               <Image source={item.image} style={styles.contactItemAvatar} />
+              {item.unread ? <View style={styles.unreadLabel} /> : null}
             </View>
             <View style={styles.contactItemContent}>
               <View style={styles.contactItemRow}>
                 <Text numberOfLines={1} style={styles.contactItemName}>
                   {item.name}
                 </Text>
+                <Text numberOfLines={1} style={styles.contactItemDate}>
+                  {item.latestDate}
+                </Text>
+              </View>
+              <View style={styles.contactItemRow}>
+                <Text numberOfLines={1} style={styles.contactItemMessage}>
+                  {item.latestMessage}
+                </Text>
+                {item.unread ? null : <CheckedIcon />}
               </View>
             </View>
           </View>
@@ -55,7 +89,7 @@ const ContactList = ({ onGoChat }: { onGoChat: () => void }) => {
   );
 };
 
-export default ContactList;
+export default ChatList;
 
 const createStyles = (theme: Theme) => {
   return StyleSheet.create({
@@ -84,7 +118,7 @@ const createStyles = (theme: Theme) => {
       marginTop: 22,
     },
     tabbar: {
-      ...theme.align.flexRowBetween,
+      ...theme.align.flexRowEnd,
       marginTop: 25,
       paddingBottom: 21,
       width: '100%',
@@ -105,6 +139,8 @@ const createStyles = (theme: Theme) => {
     contactItem: {
       ...theme.align.flexRowCenter,
       paddingVertical: 11,
+      borderBottomWidth: 1,
+      borderColor: theme.color.borderPrimary,
     },
     contactItemAvatar: {
       width: 55,
@@ -112,7 +148,7 @@ const createStyles = (theme: Theme) => {
       borderRadius: 28,
     },
     contactItemContent: {
-      ...theme.align.flexRowCenter,
+      ...theme.align.flexColBetween,
       flex: 1,
       marginLeft: 10,
       paddingVertical: 5,
@@ -134,5 +170,33 @@ const createStyles = (theme: Theme) => {
       ...theme.font.normal,
       color: theme.color.primary,
     },
+    tabItem: {
+      marginHorizontal: 6,
+      paddingVertical: 2,
+      paddingHorizontal: 4,
+    },
+    activeTabItem: {
+      backgroundColor: theme.color.borderPrimary,
+    },
+    unreadLabel: {
+      position: 'absolute',
+      right: 2,
+      top: 0,
+      width: 13,
+      height: 13,
+      borderRadius: 7,
+      backgroundColor: theme.color.unread,
+    },
   });
 };
+
+const tabsList = [
+  {
+    label: 'Friends',
+    value: 0,
+  },
+  {
+    label: 'Strangers',
+    value: 1,
+  },
+];

@@ -9,8 +9,8 @@ import PlusIcon from '@svg/plus.svg';
 import CheckedIcon from '@svg/checked.svg';
 import { mockupContactList } from '@utils/mockup';
 
-const ContactListContainer = () => {
-  return <ContactList />;
+const ContactListContainer = ({ onGoChat }: { onGoChat: () => void }) => {
+  return <ContactList onGoChat={onGoChat} />;
 };
 
 export default ContactListContainer;
