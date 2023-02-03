@@ -8,18 +8,19 @@ import { Theme } from '@theme/Theme.interface';
 import { useThemeAwareObject } from '@theme/ThemeAwareObject.hook';
 // * assets
 import CheckedIcon from '@svg/checked.svg';
-import { mockupContactList } from '@utils/mockup';
 
 const ChatList = ({
   activeTab,
   list,
   setActiveTab,
   onGoContact,
+  goChat,
 }: {
   activeTab: number;
   list: any[];
   setActiveTab: (newTab: number) => void;
   onGoContact: () => void;
+  goChat: (newChatId: number) => () => void;
 }) => {
   const onTabPress = useCallback(
     (newTab: number) => () => setActiveTab(newTab),
@@ -59,7 +60,8 @@ const ChatList = ({
       </View>
       <View style={styles.contentList}>
         {list.map((item, index) => (
-          <View
+          <TouchableOpacity
+            onPress={goChat(item.id)}
             style={styles.contactItem}
             key={`contact-item-${item.id}-${index}`}>
             <View style={styles.contactItemAvatar}>
@@ -82,7 +84,7 @@ const ChatList = ({
                 {item.unread ? null : <CheckedIcon />}
               </View>
             </View>
-          </View>
+          </TouchableOpacity>
         ))}
       </View>
     </View>
