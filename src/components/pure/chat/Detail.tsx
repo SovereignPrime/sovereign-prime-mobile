@@ -1,4 +1,6 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+// * custom components
+import ChatItem from './ChatItem';
 // * styles
 import { Theme } from '@theme/Theme.interface';
 import { useThemeAwareObject } from '@theme/ThemeAwareObject.hook';
@@ -6,10 +8,10 @@ import { useThemeAwareObject } from '@theme/ThemeAwareObject.hook';
 import BackIcon from '@svg/back.svg';
 import WalletIcon from '@svg/wallet.svg';
 import PhoneIcon from '@svg/phone.svg';
-
+// * mockups
 import Avatar01 from '@image/mockup/avatar01.png';
 
-const ChatDetail = () => {
+const ChatDetail = ({ list }: { list: any[] }) => {
   const styles = useThemeAwareObject(createStyles);
 
   return (
@@ -27,7 +29,11 @@ const ChatDetail = () => {
           <PhoneIcon width={33} height={33} style={styles.headerIcon} />
         </TouchableOpacity>
       </View>
-      <View style={styles.chatContainer}></View>
+      <View style={styles.chatContainer}>
+        {list.map(chatItem => (
+          <ChatItem {...chatItem} key={`chat-history-item-${chatItem.id}`} />
+        ))}
+      </View>
     </View>
   );
 };

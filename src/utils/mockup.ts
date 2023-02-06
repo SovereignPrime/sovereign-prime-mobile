@@ -10,6 +10,7 @@ import MarketItem03 from '@image/mockup/marketItem03.png';
 import MarketItem04 from '@image/mockup/marketItem04.png';
 import MarketItem1 from '@image/mockup/marketItem001.png';
 import MarketItemUpdate1 from '@image/mockup/marketItem0001.png';
+import ProductItem01 from '@image/mockup/product_detail1.png';
 
 const mockupNotificationList = [
   {
@@ -387,6 +388,21 @@ const mockupWalletNotifications = [
   },
 ];
 
+const mockupChatHistory = [
+  {
+    id: 1,
+    product: {
+      id: 1,
+      image: ProductItem01,
+      name: 'Dominiak Spyder',
+      price: 10000,
+    },
+    content:
+      'Hi Stackz, I’m interested in your post. May I ask what year is this vihecle?',
+    createdAt: 'Today, 8:10pm',
+  },
+];
+
 export {
   mockupNotificationList,
   mockupVerificationUsersList,
@@ -397,4 +413,5 @@ export {
   mockupMarketList,
   mockupCompletedTransactionsList,
   mockupWalletNotifications,
+  mockupChatHistory,
 };

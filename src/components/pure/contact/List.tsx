@@ -33,6 +33,7 @@ const ContactList = ({ onGoChat }: { onGoChat: () => void }) => {
           <GoIcon width={16} height={16} style={styles.goIcon} />
         </TouchableOpacity>
       </View>
+
       <View style={styles.contentList}>
         {mockupContactList.map((item, index) => (
           <View
