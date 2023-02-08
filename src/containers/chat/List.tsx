@@ -20,9 +20,12 @@ const ChatListContainer = ({ onGoContact }: { onGoContact: () => void }) => {
     },
     [],
   );
+  const onBackToList = useCallback(() => {
+    setChatboxId(undefined);
+  }, []);
 
   return chatboxId ? (
-    <ChatDetail id={chatboxId} />
+    <ChatDetail id={chatboxId} onBack={onBackToList} />
   ) : (
     <ChatList
       activeTab={activeTab}

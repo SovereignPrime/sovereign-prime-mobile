@@ -7,15 +7,16 @@ import RequestMakePaymentScreen from './RequestMakePayment';
 import ConfirmPaymentScreen from './ConfirmPayment';
 import TransactionScreen from './Transaction';
 import HistoryScreen from './History';
-import { walletSubmenuList } from '@utils/renderOptions';
+import NotificationScreen from './Notification';
 import { WalletSubmenu } from '@components/atoms/wallet/Item';
 import WalletIDBox from '@components/atoms/wallet/IDBox';
 // * styles
 import { Theme } from '@theme/Theme.interface';
 import { useThemeAwareObject } from '@theme/ThemeAwareObject.hook';
+// * constants
+import { walletSubmenuList } from '@utils/renderOptions';
 // * mockup
 import AvatarImage from '@image/mockup/avatar07.png';
-import NotificationScreen from './Notification';
 
 /**
  * currentStep
